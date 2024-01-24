@@ -1,0 +1,1 @@
+npm update hexo-theme-butterfly

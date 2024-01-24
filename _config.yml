@@ -3,22 +3,39 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: W1ndysの小屋
+subtitle: W1ndysの小屋
+description: 欲戴皇冠，必承其重
+keywords: W1ndys
+author: W1ndys
+language: zh-CN
+timezone: "Asia/Shanghai"
+email: w1ndys@outlook.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://www.w1ndys.top/
+## permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html ## 此处可以自己设置
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+
+## abbrlink config
+abbrlink:
+  alg: crc32 #support crc16(default) and crc32 进制
+  rep: hex #support dec(default) and hex  算法
+  drafts: false #(true)Process draft,(false)Do not process draft. false(default)
+  ## Generate categories from directory-tree
+  ## depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+    enable: true #true(default)
+    depth: #3(default)
+    over_write: false
+  auto_title: false #enable auto title, it can auto fill the title by path
+  auto_date: false #enable auto date, it can auto fill the date by time today
+  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
 
 # Directory
 source_dir: source
@@ -29,6 +46,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - "html/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -37,30 +55,43 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
-relative_link: false
+relative_link: true
 future: true
-syntax_highlighter: highlight.js
 highlight:
+  enable: true
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
+  enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: ""
+
+# Security
+encrypt: # hexo-blog-encrypt
+  enable: true
+  abstract: 这篇文章被加密了喵~W1ndys不想让你看见里面的内容。
+  message: 你好，请输入这篇文章的密码！锵锵！可莉登场！
+  tags:
+    #例如：{name: CTF, password: CTF}就是加密了CTF下的所有文章，密码统一为CTF
+    - { name: tagName, password: 密码B }
+  # - {name: 数据结构作业, password: w1ndys_fw}
+  wrong_pass_message: 这个密码看着不太对, 再试试吧~或者线下solo博主试试。
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
 
@@ -80,7 +111,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: "mtime"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -96,9 +127,35 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo:
+    github: git@github.com:W1ndys/w1ndys.github.io.git
+    # gitee: https://gitee.com/W1ndys/w1ndys.git
+    # bitbucket: git@bitbucket.org:w1ndys/w1ndys.bitbucket.io.git
+  branch: master
+
+
+markdown:
+  anchors:
+    level: 1
+  plugins:
+    - "@renbaoshuo/markdown-it-katex"
+
+# npm install hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  content: false
+  format: html
+
+# npm install hexo-generator-search
+# search:
+#   path: search.xml
+#   field: post
+#   content: false
+#   template:
