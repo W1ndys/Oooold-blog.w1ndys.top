@@ -33,6 +33,14 @@ date: 2024-01-24 11:31:37
 > 3. 了解 [《提问的智慧》](https://w1ndys.top/posts/fb3832f5.html) 以及 [《如何像一个弱智一样提问》](https://blog.arisa.moe/blog/2022/220428-how-to-ask-questions-like-a-retard/#/)
 > 4. 在没有错误日志下诊断问题无异于闭眼开车
 
+首先，本教程相对于GitHub pages的优势
+
+1. 本方法不再局限于只有一个仓库可以生成静态页面
+2. 国内访问速度飞快
+3. 每月有100G流量额度，对于个人博客记录来讲完全够用甚至还余下很多
+
+<br/>
+
 用久了 GitHub pages 发现，在国内的访问速度确实是有点慢，这是因为 GitHub pages 的服务器是在国外，所以在国内访问慢是正常的
 
 这个方法 <span style="color:#FF0000;"> 不需要云服务器，不需要备案，全部免费 </span>
