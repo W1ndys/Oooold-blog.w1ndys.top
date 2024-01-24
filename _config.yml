@@ -134,9 +134,7 @@ theme: butterfly
 deploy:
   type: git
   repo:
-    # github: git@github.com:W1ndys/w1ndys.github.io.git
-    # gitee: https://gitee.com/W1ndys/w1ndys.git
-    # bitbucket: git@bitbucket.org:w1ndys/w1ndys.bitbucket.io.git
+    github: https://github.com/W1ndys/w1ndys.github.io.git
   branch: master
 
 
