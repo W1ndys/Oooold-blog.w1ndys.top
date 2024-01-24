@@ -54,9 +54,9 @@ code_word_wrap: false #在默认情况下，Hexo 在编译的时候不会实现�
 #   icon: link || the description || color
 # Butterfly支持 font-awesome v6 图标.  https://fontawesome.com/icons?from=io
 social:
-  fa-brands fa-qq: https://qm.qq.com/q/dJjlDIFJfM || QQ 
-  fab fa-github: https://github.com/W1ndys/ || Github 
-  fas fa-envelope: mailto:w1ndys@outlook.com || Email 
+  fa-brands fa-qq: https://qm.qq.com/q/dJjlDIFJfM || QQ
+  fab fa-github: https://github.com/W1ndys/ || Github
+  fas fa-envelope: mailto:w1ndys@outlook.com || Email
 
 # Image (图片设置)
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -101,12 +101,12 @@ default_top_img: /img/bg/bg.png
 
 # The banner image of archive page
 # 归档页面的 top_img
-archive_img:
+archive_img: /img/bg/bg.png
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子标签页面的 top_img)
 # tag 子页面 的 默认 top_img
-tag_img:
+tag_img: /img/bg/bg.png
 
 # The banner image of tag page
 # tag 子页面的 top_img，可配置每个 tag 的 top_img
@@ -117,7 +117,7 @@ tag_per_img:
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分类页面的 top_img)
 # category 子页面 的 默认 top_img
-category_img:
+category_img: /img/bg/bg.png
 
 # The banner image of category page
 # category 子页面的 top_img，可配置每个 category 的 top_img
@@ -1094,10 +1094,10 @@ text_align_justify: true
 # 图片格式 url(http://xxxxxx.com/xxx.jpg)
 # 颜色（HEX值/RGB值/顔色单词/渐变色)
 # 留空 不显示背景
-background: 
+background: url(https://w1ndys.top/img/bg/bg.png)
 
 # footer是否显示图片背景(与top_img一致)
-footer_bg: '#e9edf1'
+footer_bg: true
 
 # Add mask to header or footer (为 header 或 footer 添加黑色半透遮罩)
 mask:
@@ -1218,7 +1218,6 @@ subtitle:
   sub:
     # - 今日事&#44;今日毕
     # - Never put off till tomorrow what you can do today
- 
 
 # 加载动画 Loading Animation
 preloader:
