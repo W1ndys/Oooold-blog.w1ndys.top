@@ -12,24 +12,23 @@
     "version": "7.1.1"
   },
   "dependencies": {
-    "@renbaoshuo/markdown-it-katex": "^2.0.2",
     "hexo": "^7.0.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-blog-encrypt": "^3.1.9",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
-    "hexo-generator-searchdb": "^1.4.1",
+    "hexo-generator-search": "^2.4.3",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-markdown-it": "^7.1.1",
+    "hexo-renderer-kramed": "^0.1.4",
+    "hexo-renderer-marked": "^6.2.0",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-anzhiyu": "^1.6.12",
     "hexo-theme-butterfly": "^4.12.0",
     "hexo-theme-landscape": "^1.0.0",
-    "hexo-wordcount": "^6.0.1",
-    "katex": "^0.16.9"
+    "hexo-wordcount": "^6.0.1"
   }
 }
