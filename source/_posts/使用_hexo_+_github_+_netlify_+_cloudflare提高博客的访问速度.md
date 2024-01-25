@@ -30,12 +30,12 @@ date: 2024-01-24 11:31:37
 > 3. 了解 [《提问的智慧》](https://w1ndys.top/posts/fb3832f5.html) 以及 [《如何像一个弱智一样提问》](https://blog.arisa.moe/blog/2022/220428-how-to-ask-questions-like-a-retard/#/)
 > 4. 在没有错误日志下诊断问题无异于闭眼开车
 
-首先，本教程相对于GitHub pages的优势
+首先，本教程相对于 GitHub pages 的优势
 
 1. 本方法不再局限于只有一个仓库可以生成静态页面
 2. 国内访问速度飞快
-3. 每月有100G流量额度，对于个人博客记录来讲完全够用甚至还余下很多
-3. 静态页面生成速度高于GitHub pages至少一倍
+3. 每月有 100G 流量带宽额度，300 分钟的构建时间，对于个人博客记录来讲完全够用甚至还余下很多
+3. 静态页面生成速度高于 GitHub pages 至少一倍
 
 <br/>
 
@@ -213,7 +213,7 @@ hexo s
 
 然后找到刚刚创建的 repo
 
-配置就按照我这个来写，注意分支，如果你是master填master，如果你是main就填main
+配置就按照我这个来写，注意分支，如果你是 master 填 master，如果你是 main 就填 main
 
 ![image-20240124140806592](/img/Netlify/image-20240124140806592.png)
 
