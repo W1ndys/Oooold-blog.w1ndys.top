@@ -56,7 +56,7 @@ code_word_wrap: false #在默认情况下，Hexo 在编译的时候不会实现�
 social:
   fa-brands fa-qq: https://qm.qq.com/q/dJjlDIFJfM || QQ
   fab fa-github: https://github.com/W1ndys/ || Github
-  fas fa-envelope: /mailto:w1ndys@outlook.com || Email
+  fas fa-envelope: mailto:w1ndys@outlook.com || Email
 
 # Image (图片设置)
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -967,7 +967,7 @@ artalk:
 # 你只需要把chat_btn打开就行。
 # Chat Button [recommend]
 # It will create a button in the bottom right corner of website, and hide the origin button
-chat_btn: true
+chat_btn: false
 # 为了不影响访客的体验，主题提供一个chat_hide_show配置
 # 设为true后，使用工具提供的按钮时，只有向上滚动才会显示聊天按钮，向下滚动时会隐藏按钮。
 # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
