@@ -74,17 +74,17 @@ prismjs:
   line_number: true
   tab_replace: ""
 
-# Security
-encrypt: # hexo-blog-encrypt
-  enable: true
-  abstract: 这篇文章被加密了喵~W1ndys不想让你看见里面的内容。
-  message: 你好，请输入这篇文章的密码！锵锵！可莉登场！
-  tags:
-    #例如：{name: CTF, password: CTF}就是加密了CTF下的所有文章，密码统一为CTF
-    - { name: tagName, password: 密码B }
-  # - {name: 数据结构作业, password: w1ndys_fw}
-  wrong_pass_message: 这个密码看着不太对, 再试试吧~或者线下solo博主试试。
-  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+# # Security
+# encrypt: # hexo-blog-encrypt
+#   enable: true
+#   abstract: 这篇文章被加密了喵~W1ndys不想让你看见里面的内容。
+#   message: 你好，请输入这篇文章的密码！锵锵！可莉登场！
+#   tags:
+#     #例如：{name: CTF, password: CTF}就是加密了CTF下的所有文章，密码统一为CTF
+#     - { name: tagName, password: 密码B }
+#   # - {name: 数据结构作业, password: w1ndys_fw}
+#   wrong_pass_message: 这个密码看着不太对, 再试试吧~或者线下solo博主试试。
+#   wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -127,7 +127,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: anzhiyu
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

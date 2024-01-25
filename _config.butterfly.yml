@@ -971,12 +971,12 @@ chat_btn: false
 # 为了不影响访客的体验，主题提供一个chat_hide_show配置
 # 设为true后，使用工具提供的按钮时，只有向上滚动才会显示聊天按钮，向下滚动时会隐藏按钮。
 # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-chat_hide_show: true
+chat_hide_show: false
 
 # chatra
 # https://chatra.io/
 chatra:
-  enable: true
+  enable: false
   id: DouTZhBqhf3Qha8Xj
 
 # tidio
