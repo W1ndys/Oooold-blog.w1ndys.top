@@ -44,7 +44,7 @@ highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac li
 highlight_copy: true # 复制按钮
 highlight_lang: true # 展示编程语言
 highlight_shrink: false # true: 缩小代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
-highlight_height_limit: false # unit: px
+highlight_height_limit: 500  # unit: px
 code_word_wrap: false #在默认情况下，Hexo 在编译的时候不会实现代码自动换行。如果你不希望在代码块的区域里有横向滚动条的话，那么你可以考虑开启这个功能。
 
 # Social Settings (社交图标设置)
