@@ -5,7 +5,7 @@ from datetime import datetime
 def create_markdown_file(title, tags, categories):
     # 获取脚本所在目录的绝对路径
     script_dir = os.path.dirname(os.path.abspath(__file__))
-
+    
     # 设置文件路径和名称
     file_name = f"{title.replace(' ', '_').lower()}.md"
     file_path = os.path.join(script_dir, "source/_posts", file_name)
@@ -29,16 +29,10 @@ def create_markdown_file(title, tags, categories):
                    f"---\n\n"
 
     # 创建Markdown文件并写入front-matter
-    with open(file_path, 'w', encoding='utf-8') as file:
+    with open(file_path, 'w') as file:
         file.write(front_matter)
 
     print(f"Markdown文件 '{file_name}' 已成功创建。")
-
-    # 打开创建的文件
-    try:
-        os.system(f'start {file_path}')
-    except Exception as e:
-        print(f"无法自动打开文件：{e}")
 
 # 示例用法
 print("—————————————————————————————————————————————————————————— ")
@@ -52,5 +46,5 @@ title = input("请输入标题: ")
 tags = input("请输入标签（多个标签用空格隔开）: ")
 categories = input("请输入分类（多个分类用空格隔开）: ")
 
-# 调用函数创建Markdown文件并打开
+# 调用函数创建Markdown文件
 create_markdown_file(title, tags, categories)

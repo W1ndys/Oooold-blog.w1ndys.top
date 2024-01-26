@@ -1,0 +1,3 @@
+printf "\033[32mINFO \033[0m 正在安装永久链接插件...\n"
+npm install hexo-abbrlink --save
+printf "\033[32mINFO \033[0m 安装完成，请在配置文件里配置相关内容...\n"
