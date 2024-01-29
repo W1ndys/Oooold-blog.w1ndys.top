@@ -113,9 +113,11 @@ password: chatGPT_1s_g0od
 
 <span style="background:#FF8000;"> 注意 </span>：<span style="font-size:1.1em; color:#FF3399;"> 有 ChatGPT 或者outlook账号的可以跳过此步骤，有 Google 账号的可以跳过此步骤，有 Apple 账号的可以先直接试试第三步，如果不行再回来本步骤 </span>
 
-注册Microsoft/outlook账号的可以看这个https://zhuanlan.zhihu.com/p/562697383#/
+<span style="color:#FF8000;">提醒</span>：Microsoft的注册比Google注册简单很多，可以先试试注册Microsoft
 
+注册Microsoft/outlook账号的可以看这个
 
+https://zhuanlan.zhihu.com/p/562697383#/
 
 关于 Google 账号如何注册可以看下面链接另一篇博客
 
