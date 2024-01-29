@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Actions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #directButton {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+    }
+
+    #copyButton {
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+    }
+
+    .button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <p>选择以下操作：</p>
+  <button id="directButton" class="button" onclick="directToEmail()">直接跳转到邮箱</button>
+  <button id="copyButton" class="button" onclick="copyEmail()">复制邮箱地址</button>
+
+  <script>
+    function directToEmail() {
+      window.location.href = "mailto:w1ndys@outlook.com";
+    }
+
+    function copyEmail() {
+      var emailText = "w1ndys@outlook.com";
+      var emailInput = document.createElement("input");
+      emailInput.value = emailText;
+      document.body.appendChild(emailInput);
+      emailInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(emailInput);
+      alert("邮箱地址已复制到剪贴板： " + emailText);
+    }
+  </script>
+</body>
+</html>
