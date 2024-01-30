@@ -7,9 +7,9 @@ categories:
   - ChatGPT
 index_img: /img/ChatGPT/logo.jpg
 abbrlink: acc7bbca
-abstract: 微信公众号：W1ndys_Official点下方按钮获取密码。
-message: 微信公众号：W1ndys_Official下方按钮获取密码。
-wrong_pass_message: 密码不太对，去问问作者吧。
+abstract: 输入任意内容回车查看解锁指引
+message: 输入任意内容回车查看解锁指引
+wrong_pass_message: 微信关注公众号：W1ndys，根据指引获取密码
 wrong_hash_message: 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。
 password: chatGPT_1s_g0od
 ---
@@ -67,11 +67,13 @@ password: chatGPT_1s_g0od
 
 ### 账号注册
 
+<span style="border:1px solid #FF007F;"> 本人不对此工具处理任何售后，有使用问题请找他们官网售后 </span>
+
 有了这个工具，你不只是能进 ai，还可以高速浏览 GitHub 等网站，以及............
 
 点击下方任意链接跳转注册界面↓（有进不去的换一个）
 
-<span style="font-size:1.3em;">[链接1](https://sakuracat.shop/user/#/register?code=Fo7cS2WA)          [链接2](https://sakuracat-cdn02.com/user/#/register?code=Fo7cS2WA)             [链接3](https://sakuracat-cdn01.com/user/#/register?code=Fo7cS2WA)          [链接4](https://sakuracat-004.com/user/#/register?code=Fo7cS2WA)          [链接5](https://sakuracat-003.com/user/#/register?code=Fo7cS2WA)         [链接6](https://sakuracat-b.com/user/#/register?code=Fo7cS2WA)          [链接7](https://sakuracat-a.com/user/#/register?code=Fo7cS2WA)</span>
+<span style="font-size:1.3em;"> [链接 1](https://sakuracat.shop/user/#/register?code=Fo7cS2WA)          [链接 2](https://sakuracat-cdn02.com/user/#/register?code=Fo7cS2WA)             [链接 3](https://sakuracat-cdn01.com/user/#/register?code=Fo7cS2WA)          [链接 4](https://sakuracat-004.com/user/#/register?code=Fo7cS2WA)          [链接 5](https://sakuracat-003.com/user/#/register?code=Fo7cS2WA)         [链接 6](https://sakuracat-b.com/user/#/register?code=Fo7cS2WA)          [链接 7](https://sakuracat-a.com/user/#/register?code=Fo7cS2WA) </span>
 
 输入邮箱密码注册账号，注册完成后登陆
 
@@ -109,13 +111,13 @@ password: chatGPT_1s_g0od
 
 ![节点](/img/VPN/节点.png)
 
-## Google /Microsoft账号的注册
+## Google /Microsoft 账号的注册
 
-<span style="background:#FF8000;"> 注意 </span>：<span style="font-size:1.1em; color:#FF3399;"> 有 ChatGPT 或者outlook账号的可以跳过此步骤，有 Google 账号的可以跳过此步骤，有 Apple 账号的可以先直接试试第三步，如果不行再回来本步骤 </span>
+<span style="background:#FF8000;"> 注意 </span>：<span style="font-size:1.1em; color:#FF3399;"> 有 ChatGPT 或者 outlook 账号的可以跳过此步骤，有 Google 账号的可以跳过此步骤，有 Apple 账号的可以先直接试试第三步，如果不行再回来本步骤 </span>
 
-<span style="color:#FF8000;">提醒</span>：Microsoft的注册比Google注册简单很多，可以先试试注册Microsoft
+<span style="color:#FF8000;"> 提醒 </span>：Microsoft 的注册比 Google 注册简单很多，可以先试试注册 Microsoft
 
-注册Microsoft/outlook账号的可以看这个
+注册 Microsoft/outlook 账号的可以看这个
 
 https://zhuanlan.zhihu.com/p/562697383#/
 
@@ -133,7 +135,7 @@ https://w1ndys.top/2023/12/23/Google_account/
 
 ![image-20231223010822238](/img/ChatGPT/image-1.png)
 
-点继续使用 Google/Microsoft，看个人喜好，三个理论上都行，有哪个点哪个，这里以Google为例（，另外有 Apple 可选 Apple 但后面需不需要别的认证我不知道，买不起果子没试过）
+点继续使用 Google/Microsoft，看个人喜好，三个理论上都行，有哪个点哪个，这里以 Google 为例（，另外有 Apple 可选 Apple 但后面需不需要别的认证我不知道，买不起果子没试过）
 
 ![image-20231223010933294](/img/ChatGPT/image-20231223010933294.png)
 
