@@ -42,8 +42,15 @@ def create_markdown_file(title, tags, categories):
 
         print(f"Markdown文件 '{file_name}' 已成功创建.")
 
-        # 使用默认方式打开文件
-        subprocess.Popen([file_path], shell=True)
+        # 使用默认方式打开文件所在目录
+        if os.name == "nt":  # Windows系统
+            subprocess.Popen(
+                ["explorer", os.path.abspath(os.path.dirname(file_path))], shell=True
+            )
+        else:  # Linux系统
+            subprocess.Popen(
+                ["xdg-open", os.path.abspath(os.path.dirname(file_path))], shell=True
+            )
 
     except Exception as e:
         print(f"创建Markdown文件时发生错误: {e}")
