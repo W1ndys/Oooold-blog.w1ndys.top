@@ -1,11 +1,18 @@
 ---
 title: BeginCTF（新生赛道）部分wp
-tags: [CTF,WP,BeginCTF]
-categories: [CTF,WP,BeginCTF]
-date: 2024-01-31 14:45:51
+tags:
+  - CTF
+  - WP
+  - BeginCTF
+categories:
+  - CTF
+  - WP
+  - BeginCTF
 password: 4654984648974
 message: 比赛未结束，请遵守比赛环境及规则，不公开WP
-wrong_pass_message: 比赛未结束，请遵守比赛环境及规则，不公开WP 
+wrong_pass_message: 比赛未结束，请遵守比赛环境及规则，不公开WP
+abbrlink: c4767082
+date: 2024-01-31 14:45:51
 ---
 
 # Misc
