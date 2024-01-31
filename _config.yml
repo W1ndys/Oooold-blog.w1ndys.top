@@ -154,5 +154,9 @@ markdown:
 search:
   path: search.xml
   field: post
+<<<<<<< HEAD
   content: true
+=======
+  content: false
+>>>>>>> cea042a29a9b6f912f7812ab4612f732e2c61006
   template:
