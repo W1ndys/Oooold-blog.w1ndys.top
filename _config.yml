@@ -154,5 +154,5 @@ markdown:
 search:
   path: search.xml
   field: post
-  content: false
+  content: true
   template:
