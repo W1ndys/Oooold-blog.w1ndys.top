@@ -151,15 +151,15 @@ markdown:
     collisionSuffix: ''
 
 # npm install hexo-generator-searchdb
-search:
-  path: search.xml
-  field: post
-  content: false
-  format: html
-
-# npm install hexo-generator-search
 # search:
 #   path: search.xml
 #   field: post
 #   content: false
-#   template:
+#   format: html
+
+# npm install hexo-generator-search
+ search:
+   path: search.xml
+   field: post
+   content: false
+   template:
