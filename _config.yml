@@ -137,7 +137,6 @@ theme: butterfly
 #     github: https://github.com/W1ndys/w1ndys.github.io.git
 #   branch: master
 
-
 markdown:
   render:
     html: true
@@ -148,7 +147,7 @@ markdown:
   plugins:
   anchors:
     level: 1
-    collisionSuffix: ''
+    collisionSuffix: ""
 
 # npm install hexo-generator-search
 search:
