@@ -14,7 +14,7 @@ layout: about
 <center> <font color='#FF6666'>每个人都是卷比，只不过没有卷到自己喜欢的东西</font> </center> <br/>
 
 <div style="text-align: center;">
-  <p>热爱网络安全，CTF爱好者，菜鸡re手</p>
+  <p>热爱网络安全，CTF爱好者，菜鸡re手<br/>喜欢道观文化</p>
   <p><a href="mailto:w1ndys@outlook.com">w1ndys@outlook.com</a></p>
 </div>
 
