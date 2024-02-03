@@ -42,15 +42,11 @@ def create_markdown_file(title, tags, categories):
 
         print(f"Markdown文件 '{file_name}' 已成功创建.")
 
-        # 使用默认方式打开文件所在目录
-        if os.name == "nt":  # Windows系统
-            subprocess.Popen(
-                ["explorer", os.path.abspath(os.path.dirname(file_path))], shell=True
-            )
-        else:  # Linux系统
-            subprocess.Popen(
-                ["xdg-open", os.path.abspath(os.path.dirname(file_path))], shell=True
-            )
+        # 打开Markdown文件
+        os.system(file_path)
+
+        # # 等待用户输入，防止程序立即退出
+        # input("按Enter键退出...")
 
     except Exception as e:
         print(f"创建Markdown文件时发生错误: {e}")
@@ -70,6 +66,3 @@ categories = input("请输入分类（多个分类用空格隔开）: ")
 
 # 调用函数创建Markdown文件
 create_markdown_file(title, tags, categories)
-
-# # 按 Enter 键退出
-# input("按 Enter 键退出...")
