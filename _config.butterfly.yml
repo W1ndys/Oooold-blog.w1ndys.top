@@ -1099,7 +1099,7 @@ text_align_justify: true
 background: url(/img/bg/bg.png)
 
 # footer是否显示图片背景(与top_img一致)
-footer_bg: true
+footer_bg: false
 
 # Add mask to header or footer (为 header 或 footer 添加黑色半透遮罩)
 mask:
@@ -1331,6 +1331,7 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
+    - <script src="/js/foot.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
