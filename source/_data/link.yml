@@ -42,7 +42,7 @@
       avatar: http://xiaowaaa.asia/img/avatar.png
       descr: 兵哥的博客
 
-- class_name: Butterfly主题魔改大佬
+- class_name: Butterfly主题魔改美化大佬
   class_desc: 这真是魔改大佬
   link_list:
     - name: 安知鱼
@@ -57,6 +57,10 @@
       link: https://akilar.top/
       siteshot: https://npm.elemecdn.com/akilar-friends@latest/siteshot/akilar.top.jpg
       avatar: https://npm.elemecdn.com/akilar-friends@latest/avatar/akilar.top.jpg
+      descr: 欢迎光临糖果屋
+    - name: 偷掉月亮的阿硕
+      link: https://moonshuo.cn/#/
+      avatar: https://moonshuo.cn/img/avatar.gif
       descr: 欢迎光临糖果屋
 
 
