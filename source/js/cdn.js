@@ -1,7 +1,6 @@
 // 创建一个包含要添加到底部的内容的 HTML 字符串
 var content = `
     <div style="text-align: center; display: flex; justify-content: center; align-items: center; margin: 20px;">
-        
         <p style="margin-left: 10px;"><a href="https://www.dogecloud.com/" target="_blank" rel="noopener noreferrer">多吉云提供CDN加速服务</a></p>
     </div>
 `;
