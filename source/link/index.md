@@ -10,7 +10,7 @@ type: "link"
 ```
 - name: W1ndysの小屋
   link: https://w1ndys.top/
-  avatar: https://w1ndys.top/img/about/me.jpg
+  avatar: http://w1ndys.top/img/logo/logo.png
   descr: 欲戴皇冠，必承其重
 ```
 

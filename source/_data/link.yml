@@ -64,7 +64,7 @@
       descr: 欢迎光临糖果屋
 
 
-- class_name: 原主题暂未分类友链
+- class_name: 大佬的聚集地
   class_desc: 咕咕咕（摸鱼中）
   link_list:
     - name: 曲阜师范大学
@@ -147,6 +147,13 @@
       link: https://www.mukapp.top/
       avatar: https://www.mukapp.top/pic/muk/small.webp#/
       descr: MUK的小窝
+      
+    - name: W4J1e's blog
+      avatar: https://cravatar.cn/avatar/8def0c8c73b56dc0e18744a9a43d70f4
+      link: https://hin.cool
+      descr: 总是偏爱不务正业
+
+
 
 # class_name: Butterfly官方配置
 # link_list:
