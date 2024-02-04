@@ -1329,10 +1329,13 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/card-info-btn.css">
+    - <link rel="stylesheet" href="/css/404-error-info.css">
+
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/foot.js"></script>
+    - <script src="/js/404-to-home.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
