@@ -1,6 +1,23 @@
+#!/bin/bash
 
-npm un hexo-renderer-markdown-it --save # 需要安装这个渲染插件
-npm un katex @renbaoshuo/markdown-it-katex #需要安装这个katex插件
+# 输出提示信息
+printf "正在卸载 hexo-renderer-markdown-it-katex...\n"
 
-npm i hexo-renderer-marked --save # 如果有安装这个的话，卸载
-npm i hexo-renderer-kramed --save # 如果有安装这个的话，卸载
+# 卸载 hexo-renderer-markdown-it-katex
+npm un hexo-renderer-markdown-it-katex --save
+
+# 输出提示信息
+printf "已卸载 hexo-renderer-markdown-it-katex\n"
+
+# 输出提示信息
+printf "正在安装 hexo-renderer-marked...\n"
+
+# 安装 hexo-renderer-marked
+npm i hexo-renderer-marked --save
+
+# 输出提示信息
+printf "已安装 hexo-renderer-marked\n"
+
+# 输出提示信息
+printf "按任意键退出...\n"
+read -n 1 -s -r

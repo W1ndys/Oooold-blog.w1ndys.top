@@ -1,6 +1,17 @@
-npm un hexo-renderer-marked --save # 如果有安装这个的话，卸载
-npm un hexo-renderer-kramed --save # 如果有安装这个的话，卸载
+#!/bin/bash
 
-npm i hexo-renderer-markdown-it --save # 需要安装这个渲染插件
-npm install katex @renbaoshuo/markdown-it-katex #需要安装这个katex插件
+# 删除 hexo-renderer-marked
+npm un hexo-renderer-marked --save
 
+# 输出提示信息
+printf "已删除 hexo-renderer-marked\n"
+
+# 安装 hexo-renderer-markdown-it-katex
+npm i hexo-renderer-markdown-it-katex
+
+# 输出提示信息
+printf "已安装 hexo-renderer-markdown-it-katex\n"
+
+# 输出提示信息
+printf "按 Enter 键退出...\n"
+read -r

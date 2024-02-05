@@ -1,2 +1,2 @@
 npm ls
-sleep 10000000s
+read -p "按 Enter 键退出..."
