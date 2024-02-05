@@ -56,7 +56,7 @@ code_word_wrap: false #在默认情况下，Hexo 在编译的时候不会实现�
 social:
   fa-brands fa-qq: /html/QQ || QQ
   fab fa-github: https://github.com/W1ndys/ || Github
-  fas fa-envelope: /html/email || Email
+  fas fa-envelope: mailto:w1ndys@outlook.com || Email #/html/email
 
 # Image (图片设置)
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
