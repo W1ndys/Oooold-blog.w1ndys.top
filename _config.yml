@@ -58,7 +58,7 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
-relative_link: true
+relative_link: false  #####重大bug出现地，2024年2月5日18:41:35记录，你真是个大沙比，找了一个月的bug,就因为一个布尔值
 future: true
 highlight:
   enable: true
