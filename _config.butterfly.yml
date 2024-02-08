@@ -44,7 +44,7 @@ highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac li
 highlight_copy: true # 复制按钮
 highlight_lang: true # 展示编程语言
 highlight_shrink: false # true: 缩小代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
-highlight_height_limit: 500  # unit: px
+highlight_height_limit: 500 # unit: px
 code_word_wrap: false #在默认情况下，Hexo 在编译的时候不会实现代码自动换行。如果你不希望在代码块的区域里有横向滚动条的话，那么你可以考虑开启这个功能。
 
 # Social Settings (社交图标设置)
@@ -290,14 +290,14 @@ post_edit:
 # false: 关闭分页按钮
 post_pagination: 1
 
-# Footer Settings
+# Footer Settings 页脚设置
 # https://butterfly.js.org/posts/4aa8abbe/#Footer-%E8%A8%AD%E7%BD%AE
 # ----------------------------------------------------------------------------
 footer:
   owner:
     enable: true
     since: 2023
-  custom_text: <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2024061028号-1</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://www.dogecloud.com/" target="_blank" rel="noopener noreferrer">多吉云提供CDN加速服务</a>
+  custom_text: <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2024061028号-1</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://www.dogecloud.com/" target="_blank" rel="noopener noreferrer">多吉云提供CDN加速服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/land/3HPYCcIS8vAIBRXG"><img src="https://sdk.51.la/icon/1-1.png">提供统计服务</a>
 
 # aside (侧边栏)
 # https://butterfly.js.org/posts/4aa8abbe/#%E5%81%B4%E9%82%8A%E6%8E%92%E7%89%88
@@ -1059,22 +1059,21 @@ site_verification:
 # 可以修改大部分UI颜色
 theme_color:
   enable: true
-  main: "#FF0000"  # 红色
-  paginator: "#DC143C"  # 猩红色
-  button_hover: "#B22222"  # 耐火砖色
-  text_selection: "#FF6347"  # 番茄色
-  link_color: "#8B0000"  # 深红色
-  meta_color: "#FF4500"  # 橙色
-  hr_color: "#FF1493"  # 深粉色
-  code_foreground: "#800000"  # 栗色
-  code_background: "#FFC0CB"  # 粉红色
-  toc_color: "#FF69B4"  # 粉红色
-  blockquote_padding_color: "#FF6347"  # 番茄色
-  blockquote_background_color: "#FF0000"  # 红色
-  scrollbar_color: "#FF6347"  # 番茄色
-  meta_theme_color_light: "#FF7F50"  # 珊瑚色
-  meta_theme_color_dark: "#800000"  # 栗色
-
+  main: "#FF0000" # 红色
+  paginator: "#DC143C" # 猩红色
+  button_hover: "#B22222" # 耐火砖色
+  text_selection: "#FF6347" # 番茄色
+  link_color: "#8B0000" # 深红色
+  meta_color: "#FF4500" # 橙色
+  hr_color: "#FF1493" # 深粉色
+  code_foreground: "#800000" # 栗色
+  code_background: "#FFC0CB" # 粉红色
+  toc_color: "#FF69B4" # 粉红色
+  blockquote_padding_color: "#FF6347" # 番茄色
+  blockquote_background_color: "#FF0000" # 红色
+  scrollbar_color: "#FF6347" # 番茄色
+  meta_theme_color_light: "#FF7F50" # 珊瑚色
+  meta_theme_color_dark: "#800000" # 栗色
 
 # theme_color:
 #   enable: true
@@ -1276,7 +1275,7 @@ fancybox: false
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: true
+  enable: false
   exclude:
     # - xxxx
     # - xxxx
@@ -1342,19 +1341,27 @@ Open_Graph_meta:
 css_prefix: true
 
 # Inject
+# js引入css引入 jscss
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
     - <link rel="stylesheet" href="/css/card-info-btn.css">
     - <link rel="stylesheet" href="/css/lantern.css">
+    # - <link rel="stylesheet" href="/css/404.css">
+    - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    - <script>LA.init({id:"3HPYCcIS8vAIBRXG",ck:"3HPYCcIS8vAIBRXG",autoTrack:true})</script>
+    - <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYCcIS8vAIBRXG/quote.js?theme=0&f=12"></script>
 
-    # - <link rel="stylesheet" href="/xxx.css">
+  # jscss
+
+  # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
-    - <script src="/js/foot.js?v=1.0"></script>
-    - <script src="/js/lantern.js?v=1.0"></script>
-    - <script src="/js/happy-new-year.js?v=1.0"></script>
+    - <script src="/js/foot.js"></script>
+    - <script src="/js/lantern.js"></script>
+    - <script src="/js/happy-new-year.js"></script>
+    # - <script src="/js/404.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
