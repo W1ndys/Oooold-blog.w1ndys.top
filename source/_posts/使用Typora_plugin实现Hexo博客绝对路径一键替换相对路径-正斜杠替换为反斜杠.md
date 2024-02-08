@@ -150,9 +150,14 @@ buttons = [
 
 ## 鸣谢
 
+感谢 Typora_plugin 作者，极大地方便了我的写作
+
+感谢 ChatGPT，给了我代码写作的开头
+
 1. https://github.com/obgnail/typora_plugin/issues/467
 2. https://w1ndys.top/
-
 2. https://chat.openai.com/
+
+---
 
 文章来自 https://blog.w1ndys.top/posts/520cc65
