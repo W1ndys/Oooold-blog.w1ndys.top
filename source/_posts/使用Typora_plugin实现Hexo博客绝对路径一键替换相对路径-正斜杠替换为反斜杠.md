@@ -27,11 +27,13 @@ date: 2024-02-08 15:24:23
 
 ![image-20240208160411419](/img/Typora_plugin/ReplaceBackslash/image-20240208160411419.png)
 
+![image-20240208164539253](/img/Typora_plugin/ReplaceBackslash/image-20240208164539253.png)
+
 ## 脚本适用情况
 
 该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含/img/的路径替换为相对路径，方便 Hexo 博客上传
 
-例如 Markdown 中文件路径是 `[示例图片](F:\Hexo\source\img\test.png)`
+例如 Markdown 中文件路径是 `[示例图片](F:/Hexo/source/img/test.png)`
 
 替换后的路径就是 `[示例图片](/img/test.png)`
 
@@ -48,21 +50,6 @@ https://github.com/obgnail/typora_plugin/
 在 `./plugin/custom/plugins/ReplaceBackslash.js` 文件中创建 js 文件，把下面代码复制进去。
 
 ```javascript
-// 脚本使用说明
-// 该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含/img/的路径替换为相对路径，方便 Hexo 博客上传
-
-// 例如 Markdown 中文件路径是 [示例图片](F:\Hexo\source\img\test.png)
-// 替换后的路径就是 [示例图片](/img/test.png)
-// 本脚本适用于：Hexo 博客写作排版，Hexo 图片放在/source/文件下的 Hexo 博客作者
-
-// 脚本作者↓
-// 1. https://w1ndys.top/
-// 2. https://chat.openai.com/
-// 3. https://github.com/obgnail/typora_plugin/issues/467
-
-
-//下面是脚本的具体实现代码↓
-
 class ReplaceBackslash extends BaseCustomPlugin {
     callback = async anchorNode => {
         const filepath = this.utils.getFilePath();
@@ -70,27 +57,30 @@ class ReplaceBackslash extends BaseCustomPlugin {
         const replacedContent = this.replaceBackslash(content);
         await this.utils.Package.Fs.promises.writeFile(filepath, replacedContent);
         File.reloadContent(replacedContent, { fromDiskChange: false });
-        confirm("替换成功，点击确认或取消均可继续")   //觉得弹窗比较烦人可以注释掉或者删去这一行
+        alert("执行成功");   //觉得提示信息比较烦可以把这一行删掉或者注释掉
     }
 
     // 在这里写主要的逻辑代码
     replaceBackslash = content => {
-        const regexp = /!\[(.*?)\]\((.*?)\)/g;
-        const replacedContent = content.replace(regexp, (match, desc, src) => {
-            // 检测图片路径是否包含\img\
+        // 先进行反斜杠替换
+        const replacedContent = content.replace(////g, '/');
+
+        // 扫描/img/目录，替换路径
+        const regexp = /!/[(.*?)/]/((.*?)/)/g;
+        const finalContent = replacedContent.replace(regexp, (match, desc, src) => {
+            // 检测图片路径是否包含/img/
             //————注意————，这里的img路径可以替换为你自己实际的路径
-            if (src.includes('\\img\\')) {
-                // 如果包含\img\，则删除\img\之前的路径，保留\img\并变为相对路径
-                src = '\\' + src.substring(src.indexOf('\\img\\') + 1);
+            if (src.includes('/img/')) {
+                // 如果包含/img/，则删除/img/之前的路径，保留/img/并变为相对路径
+                src = src.substring(src.indexOf('/img/') + 1);
             } else if (src.startsWith('../img')) {
                 // 如果路径以../img开头，则替换为/img
                 src = '/img' + src.substring(src.indexOf('/img') + 4);
             }
-            // 对图片路径中的反斜杠进行替换
-            const replacedSrc = src.replace(/\\/g, '/');
-            return `![${desc}](${replacedSrc})`;
+            return `![${desc}](////${src})`;
         });
-        return replacedContent;
+
+        return finalContent;
     }
 }
 
@@ -160,6 +150,18 @@ buttons = [
 ```
 
 重启 Typora 就可以在右下角看到添加的快捷按钮
+
+### 实现效果
+
+![end](/img/Typora_plugin/ReplaceBackslash/end.gif)
+
+## 更新日志
+
+2024年2月8日16:09:11修了一处没有考虑到的bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
+
+2024年2月8日16:36:36，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
+
+2024年2月8日16:42:05，增加了一个实现效果GIF演示
 
 ## 鸣谢
 
