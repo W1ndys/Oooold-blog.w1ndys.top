@@ -29,6 +29,8 @@ date: 2024-02-08 15:24:23
 
 ![image-20240208164539253](/img/Typora_plugin/ReplaceBackslash/image-20240208164539253.png)
 
+![image-20240208172549961](/img/Typora_plugin/ReplaceBackslash/image-20240208172549961.png)
+
 ## 脚本适用情况
 
 该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含/img/的路径替换为相对路径，方便 Hexo 博客上传
@@ -57,29 +59,24 @@ class ReplaceBackslash extends BaseCustomPlugin {
         const replacedContent = this.replaceBackslash(content);
         await this.utils.Package.Fs.promises.writeFile(filepath, replacedContent);
         File.reloadContent(replacedContent, { fromDiskChange: false });
-        alert("执行成功");   //觉得提示信息比较烦可以把这一行删掉或者注释掉
     }
 
     // 在这里写主要的逻辑代码
     replaceBackslash = content => {
         // 先进行反斜杠替换
-        const replacedContent = content.replace(////g, '/');
-
-        // 扫描/img/目录，替换路径
-        const regexp = /!/[(.*?)/]/((.*?)/)/g;
+        const replacedContent = content.replace(/\\/g, '/');
+        
+        // 扫描指定路径，替换路径
+        const regexp = /!\[(.*?)\]\((.*?)\)/g;
         const finalContent = replacedContent.replace(regexp, (match, desc, src) => {
-            // 检测图片路径是否包含/img/
-            //————注意————，这里的img路径可以替换为你自己实际的路径
-            if (src.includes('/img/')) {
-                // 如果包含/img/，则删除/img/之前的路径，保留/img/并变为相对路径
-                src = src.substring(src.indexOf('/img/') + 1);
-            } else if (src.startsWith('../img')) {
-                // 如果路径以../img开头，则替换为/img
-                src = '/img' + src.substring(src.indexOf('/img') + 4);
+            // 检测图片路径是否包含指定路径
+            if (src.includes('/' + this.config.img + '/')) {
+                // 如果包含指定路径，则删除指定路径之前的路径，保留指定路径并变为相对路径
+                src = '/' + this.config.img + src.substring(src.indexOf('/' + this.config.img + '/') + this.config.img.length + 1);
             }
-            return `![${desc}](////${src})`;
+            return `![${desc}](${src})`;
         });
-
+        
         return finalContent;
     }
 }
@@ -95,7 +92,12 @@ module.exports = { plugin: ReplaceBackslash };
 [ReplaceBackslash]
 name = "替换反斜杠为正斜杠"
 enable = true
+
+[ReplaceBackslash.config]
+img = "img"     #这里引号内的内容改为你自己的文件夹命名
 ```
+
+这里引号内的内容改为你自己的文件夹命名
 
 ## 添加快捷方式
 
@@ -157,11 +159,13 @@ buttons = [
 
 ## 更新日志
 
-2024年2月8日16:09:11修了一处没有考虑到的bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
+2024 年 2 月 8 日 16: 09: 11 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
 
-2024年2月8日16:36:36，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
+2024 年 2 月 8 日 16: 36: 36，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
 
-2024年2月8日16:42:05，增加了一个实现效果GIF演示
+2024 年 2 月 8 日 16: 42: 05，增加了一个实现效果 GIF 演示
+
+2024 年 2 月 8 日 17: 28: 59，受作者启发，将代码中硬编码的 /img/ 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容，
 
 ## 鸣谢
 
