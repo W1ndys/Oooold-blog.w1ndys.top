@@ -297,7 +297,7 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text: <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2024061028号-1</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://www.dogecloud.com/" target="_blank" rel="noopener noreferrer">多吉云提供CDN加速服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/land/3HPYCcIS8vAIBRXG"><img src="https://sdk.51.la/icon/1-1.png">提供统计服务</a><br/><a href="https://clarity.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Clarity提供统计服务</a><br/><a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer">Google analytics提供统计服务</a><br/><a href="https://tongji.baidu.com/web5/welcome/login#/" target="_blank" rel="noopener noreferrer">百度统计提供统计服务</a>
+  custom_text: <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2024061028号-1</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://www.dogecloud.com/" target="_blank" rel="noopener noreferrer">多吉云提供CDN加速服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/land/3HPYCcIS8vAIBRXG"><img src="https://sdk.51.la/icon/1-1.png">提供统计服务</a><br/><a href="https://clarity.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Clarity提供统计服务</a><br/><a href="https://tongji.baidu.com/web5/welcome/login#/" target="_blank" rel="noopener noreferrer">百度统计提供统计服务</a>
 
 # aside (侧边栏)
 # https://butterfly.js.org/posts/4aa8abbe/#%E5%81%B4%E9%82%8A%E6%8E%92%E7%89%88
@@ -1014,7 +1014,7 @@ baidu_analytics: 204a6d3bb0cb0e09978eff5ba3023104
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics: G-F755G4E207
+google_analytics: 
 
 # Cloudflare Analytics
 # https://www.cloudflare.com/zh-tw/web-analytics/
@@ -1309,7 +1309,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
   blur: false
