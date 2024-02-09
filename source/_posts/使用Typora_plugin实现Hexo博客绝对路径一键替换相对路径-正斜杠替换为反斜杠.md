@@ -141,7 +141,9 @@ name = "替换反斜杠为正斜杠"
 enable = true
 
 [ReplaceBackslash.config]
-img = "img"     #这里引号内的内容改为你自己的文件夹命名
+# 是否忽略html标签<img src="example.jpg">里的资源（markdown是支持插入html的，此选项问是否要忽略img标签）
+ignore_image_div = false
+img_folder = "img"          #这里引号内的内容改为你自己的文件夹命名
 ```
 
 这里引号内的内容改为你自己的文件夹命名
