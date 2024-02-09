@@ -9,6 +9,7 @@ categories:
   - Typora插件开发
 abbrlink: 520cc65
 date: 2024-02-08 15:24:23
+
 ---
 
 # 使用 Typora_plugin 实现 Hexo 博客绝对路径一键替换相对路径|正斜杠替换为反斜杠
@@ -56,32 +57,78 @@ class ReplaceBackslash extends BaseCustomPlugin {
     callback = async anchorNode => {
         const filepath = this.utils.getFilePath();
         const content = await this.utils.Package.Fs.promises.readFile(filepath, 'utf-8');
-        const replacedContent = this.replaceBackslash(content);
+        const replacedContent = await this.format(content);
         await this.utils.Package.Fs.promises.writeFile(filepath, replacedContent);
         File.reloadContent(replacedContent, { fromDiskChange: false });
     }
 
-    // 在这里写主要的逻辑代码
-    replaceBackslash = content => {
-        // 先进行反斜杠替换
-        const replacedContent = content.replace(/\\/g, '/');
-        
-        // 扫描指定路径，替换路径
-        const regexp = /!\[(.*?)\]\((.*?)\)/g;
-        const finalContent = replacedContent.replace(regexp, (match, desc, src) => {
-            // 检测图片路径是否包含指定路径
-            if (src.includes('/' + this.config.img + '/')) {
-                // 如果包含指定路径，则删除指定路径之前的路径，保留指定路径并变为相对路径
-                src = '/' + this.config.img + src.substring(src.indexOf('/' + this.config.img + '/') + this.config.img.length + 1);
-            }
-            return `![${desc}](${src})`;
+    format = async content => {
+        const dir = this.utils.getCurrentDirPath();
+        const regexp = this.config.ignore_image_div
+            ? new RegExp("!\\[.*?\\]\\((?<src1>.*)\\)", "g")
+            : new RegExp("!\\[.*?\\]\\((?<src1>.*)\\)|<img.*?src=\"(?<src2>.*?)\"", "g");
+
+        return await this.asyncReplace(content, regexp, async (match, src1, src2) => {
+            const src = src1 || src2;
+
+            // 跳过特殊格式的图片（如base64）和网络图片
+            if (!src || this.utils.isSpecialImage(src) || this.utils.isNetworkImage(src)) return match;
+
+            // 检测图片是否存在于当前电脑中，若不存在，则不处理
+            // 如果不希望检测，可以注释掉下面两行
+            const realPath = await this.checkImageExist(dir, src);
+            if (!realPath) return match;
+
+            return this.replaceBackslash(match, src, realPath);
         });
-        
-        return finalContent;
+    }
+
+    // 替换路径逻辑
+    replaceBackslash = (match, src, realPath) => {
+        const imgFolder = this.config.img_folder;
+        if (src.includes('\\' + imgFolder + '\\')) {
+            const newSrc = '\\' + imgFolder + src.substring(src.indexOf('\\' + imgFolder + '\\') + imgFolder.length + 1);
+            // 将路径中的反斜杠 \ 替换为斜杠 /
+            const replacedSrc = newSrc.replace(/\\/g, '/');
+            const index = match.indexOf(src);
+            return match.slice(0, index) + match.slice(index).replace(src, replacedSrc);
+        }
+        return match;
+    }
+
+    asyncReplace = (content, regexp, placement) => {
+        let match;
+        let lastIndex = 0;
+        const promises = [];
+
+        while ((match = regexp.exec(content))) {
+            const str = content.slice(lastIndex, match.index);
+            lastIndex = regexp.lastIndex;
+            const args = [match[0], match.groups?.src1, match.groups?.src2, match.index, match.input];
+            const promise = placement(...args);
+            promises.push(str, promise);
+        }
+        promises.push(content.slice(lastIndex));
+        return Promise.all(promises).then(results => results.join(""));
+    }
+
+    checkImageExist = async (currentDir, path) => {
+        let absolutePath = this.utils.Package.Path.resolve(currentDir, path);
+
+        while (!(await this.utils.existPath(absolutePath))) {
+            const idx = absolutePath.lastIndexOf(")");
+            if (idx === -1) {
+                return null;
+            } else {
+                absolutePath = absolutePath.slice(0, idx);
+            }
+        }
+        return absolutePath;
     }
 }
 
 module.exports = { plugin: ReplaceBackslash };
+
 ```
 
 ## 启用插件
@@ -159,13 +206,21 @@ buttons = [
 
 ## 更新日志
 
-2024 年 2 月 8 日 16: 09: 11 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
+2024 年 2 月 8 日 ， 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
 
-2024 年 2 月 8 日 16: 36: 36，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
+2024 年 2 月 8 日 ，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
 
-2024 年 2 月 8 日 16: 42: 05，增加了一个实现效果 GIF 演示
+2024 年 2 月 8 日 ，增加了一个实现效果 GIF 演示
 
-2024 年 2 月 8 日 17: 28: 59，受作者启发，将代码中硬编码的 /img/ 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容，
+2024 年 2 月 8 日 ，受作者启发，将代码中硬编码的 /img/ 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容
+
+2024 年 2 月 9 日 ，代码已更新，经过作者的施教，增强了图片路径的匹配，解决了原先替换全文\的问题，现在只替换图片路径，插件作者太强了
+
+如图
+
+![39744b9eade1b1f68271869e78e3a50e](/img/Typora_plugin/ReplaceBackslash/39744b9eade1b1f68271869e78e3a50e.png)
+
+![0096befcd128b3bf9346b755fe9e2ccf](/img/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png)
 
 ## 鸣谢
 
@@ -175,7 +230,7 @@ buttons = [
 
 1. https://github.com/obgnail/typora_plugin/issues/467
 2. https://w1ndys.top/
-2. https://chat.openai.com/
+3. https://chat.openai.com/
 
 ---
 
