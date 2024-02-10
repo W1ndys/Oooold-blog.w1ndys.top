@@ -55,6 +55,7 @@ https://github.com/obgnail/typora_plugin/
 ```javascript
 class ReplaceBackslash extends BaseCustomPlugin {
     callback = async anchorNode => {
+        hotkey = () => [this.config.hotkey]
         const filepath = this.utils.getFilePath();
         const content = await this.utils.Package.Fs.promises.readFile(filepath, 'utf-8');
         const replacedContent = await this.format(content);
@@ -71,7 +72,7 @@ class ReplaceBackslash extends BaseCustomPlugin {
         return await this.asyncReplace(content, regexp, async (match, src1, src2) => {
             const src = src1 || src2;
 
-            // 跳过特殊格式的图片（如base64）和网络图片
+            // 跳过特殊格式的图片（如 base64）和网络图片
             if (!src || this.utils.isSpecialImage(src) || this.utils.isNetworkImage(src)) return match;
 
             // 检测图片是否存在于当前电脑中，若不存在，则不处理
@@ -128,7 +129,6 @@ class ReplaceBackslash extends BaseCustomPlugin {
 }
 
 module.exports = { plugin: ReplaceBackslash };
-
 ```
 
 ## 启用插件
@@ -159,13 +159,15 @@ img_folder = "img"          #这里引号内的内容改为你自己的文件夹
 在上一步的基础上，继续添加一行代码
 
 ```
-[ReplaceBackslash]
-name = "替换反斜杠为正斜杠"
-enable = true
-hotkey = ["ctrl+shift+/"]
+[ReplaceBackslash.config]
+# 是否忽略html标签<img src="example.jpg">里的资源（markdown是支持插入html的，此选项问是否要忽略img标签）
+ignore_image_div = false
+img_folder = "img"
+# 快捷键（若为""，则不注册）
+hotkey = "ctrl+shift+m"
 ```
 
-这里快捷键设置为 `ctrl+shift+/` 可以根据自己需要修改
+这里快捷键设置为 `ctrl+shift+m` 可以根据自己需要修改
 
 ### 添加快捷按钮
 
@@ -223,6 +225,8 @@ buttons = [
 ![39744b9eade1b1f68271869e78e3a50e](/img/Typora_plugin/ReplaceBackslash/39744b9eade1b1f68271869e78e3a50e.png)
 
 ![0096befcd128b3bf9346b755fe9e2ccf](/img/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png)
+
+2024 年 2 月 10 日，大佬帮忙抓虫，纠正了快捷键的配置
 
 ## 鸣谢
 
