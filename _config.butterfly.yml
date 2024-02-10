@@ -1340,7 +1340,6 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/foot.js"></script>
-    - <script src="/js/happy-new-year.js"></script>
     # - <script src="/js/404.js"></script>
 
 # CDN
