@@ -11,14 +11,21 @@ layout: about
 
 <center> <font color='red'>“欲戴皇冠，必承其重”  </font> </center> <br/>
 
-<center> <font color='#FF6666'>每个人都是卷比，只不过没有卷到自己喜欢的东西</font> </center> <br/>
+每个人都在学习，可以是学习开发，可以学习数建，可以学习阅读，可以学习翻译，可以学习电竞，可以学习睡觉……
 
-<div style="text-align: center;">
-  <p>热爱网络安全，CTF爱好者，菜鸡re手<br/>喜欢道观文化</p>
-  <p><a href="mailto:w1ndys@outlook.com">w1ndys@outlook.com</a></p>
-</div>
+热爱网络安全，CTF爱好者，菜鸡re手
+
+喜欢道观文化
+
+[点击给我发邮箱](mailto:w1ndys@outlook.com)
 
 <br/><br/>
+
+借用[人间工作P](https://www.mrxiaom.top/#/)大佬的一段话
+
+当你热爱某前人已踏足的领域决心去钻研的时候，能否成功只是时间问题。更何况，编程仅仅是把人类的需求，通过特定的句子翻译成代码，手把手教电脑怎么做而已。程序员的存在意义，就是使用人脑这一超级计算机，将具体的需求转换成电脑能看懂的抽象代码而已。学编程就跟学英语一样，一步一步去试怎么样才能让电脑看懂你的需求。
+
+<br/><br/><br/>
 
 <center> <font color='pink'> 仰望高山的人 </font> </font> </center> <br/>
 

@@ -27,7 +27,7 @@
 #       descr: 社交分享平台
 
 - class_name: 师哥/同学们的博客
-  class_desc: 全是干货啊
+  class_desc: 全是大佬
   link_list:
     - name: 尔康康康康
       link: https://erkangkang.top/
@@ -43,7 +43,7 @@
       descr: 兵哥的博客
 
 - class_name: Butterfly主题魔改美化大佬
-  class_desc: 这真是魔改大佬
+  class_desc: 主题魔改美化开发设计大佬
   link_list:
     - name: 安知鱼
       link: https://blog.anheyu.com/
@@ -80,7 +80,7 @@
 
     - name: lukzia'blog
       link: http://lukzia.me/
-      avatar: http://43.134.129.51/wp-content/uploads/2023/03/me.jpg#/
+      avatar: http://43.134.129.51/wp-content/uploads/2023/03/me.jpg
       descr: 人如果没有梦想,那和深度神经网络有什么区别
 
     - name: Ed-Ryan'blog
@@ -135,7 +135,7 @@
 
     - name: Mcenahle的个人博客
       link: https://mcenahle.com
-      avatar: https://mcenahle.com/wp-content/uploads/2023/12/icons8-blog-96.png
+      avatar: https://mcenahle.com/wp-content/uploads/2023/12/IMG_7687.png#/
       descr: 这是Mcenahle的个人博客，记录美好生活。
 
     - name: Asteri5m
