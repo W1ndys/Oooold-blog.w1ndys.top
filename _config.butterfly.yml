@@ -1020,7 +1020,7 @@ baidu_analytics: 204a6d3bb0cb0e09978eff5ba3023104
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics: 
+google_analytics:
 
 # Cloudflare Analytics
 # https://www.cloudflare.com/zh-tw/web-analytics/
@@ -1340,12 +1340,14 @@ inject:
     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
     - <script>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
 
+
   # jscss
 
   # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/foot.js"></script>
+    - <script src="/js/ip.js"></script>
     # - <script src="/js/404.js"></script>
 
 # CDN
