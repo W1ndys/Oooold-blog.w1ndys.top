@@ -1,9 +1,15 @@
 ---
 title: Python+多吉云api实现脚本刷新CDN缓存
-tags: [Hexo,Python,多吉云,CDN]
-categories: [Hexo,多吉云CDN]
+tags:
+  - Hexo
+  - Python
+  - 多吉云
+  - CDN
+categories:
+  - Hexo
+  - 多吉云CDN
+abbrlink: 51225c3e
 date: 2024-02-10 23:40:31
-
 ---
 
 把下面代码复制之后，修改自己的key，直接跑就行
