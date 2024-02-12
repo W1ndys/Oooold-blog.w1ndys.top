@@ -1,0 +1,5 @@
+#follow-img {
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.2s, top 0.2s, left 0.2s;
+}
