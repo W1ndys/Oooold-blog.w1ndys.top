@@ -1336,7 +1336,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/card-info-btn.css">
-    - <meta name="referrer" content="never">
+    # - <meta name="referrer" content="never">
     # - <link rel="stylesheet" href="/css/404.css">
     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
     - <script>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
