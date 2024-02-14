@@ -42,11 +42,9 @@ def create_markdown_file(title, tags, categories):
 
         print(f"Markdown文件 '{file_name}' 已成功创建.")
 
-        # 打开Markdown文件
-        os.system(file_path)
-
-        # # 等待用户输入，防止程序立即退出
-        # input("按Enter键退出...")
+        # 使用subprocess打开Markdown文件，并关闭当前命令行窗口
+        subprocess.Popen(["start", file_path], shell=True)
+        os.system("exit")
 
     except Exception as e:
         print(f"创建Markdown文件时发生错误: {e}")
