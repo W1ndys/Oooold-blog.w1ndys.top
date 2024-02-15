@@ -358,7 +358,7 @@ aside:
     enable: true
     post_count: true
     last_push_date: true
-    sort_order: # Don't modify the setting unless you know how it works
+    sort_order: 9 # Don't modify the setting unless you know how it works
   card_post_series:
     enable: true
     series_title: false # The title shows the series name
