@@ -11,4 +11,4 @@ bottom:
     id_name: 51la
     name: 51la统计信息
     icon: fa fa-rss-square
-    html: '<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYFt9znqKItrHZ/quote.js?theme=0&col=true&f=12&badge=icon_0&icon=right"></script>'
+    html: '<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYFt9znqKItrHZ/quote.js?theme=#4C4948,#4C4948,#4C4948,#4C4948,#FFFFFF,#176CE4,13&col=true&f=12"></script>'
