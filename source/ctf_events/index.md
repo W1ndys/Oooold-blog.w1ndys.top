@@ -103,7 +103,7 @@ date: 2024-02-15 15:50:35
   }
 
   // JSON数据源的URL
-  var url = 'https://raw.githubusercontent.com/ProbiusOfficial/Hello-CTFtime/main/CN.json';
+  var url = 'https://gitee.com/Probius/Hello-CTFtime/raw/main/CN.json';
 
   // 获取数据并渲染日历
   fetchData(url).then(renderCalendar);
