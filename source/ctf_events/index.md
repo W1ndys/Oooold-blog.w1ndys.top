@@ -26,14 +26,21 @@ date: 2024-02-15 15:50:35
   .event-card h3 {
     margin-top: 0;
   }
+  .data-source {
+    margin-top: 20px;
+    font-size: 12px;
+    
+  }
 </style>
 </head>
 <body>
 
 <h2>比赛日历</h2>
-<div class="data-source">数据来自：探姬、三哈</div>
+
 <div class="event-card-container" id="calendarData">
 </div>
+
+<div class="data-source">数据来自：探姬、三哈</div>
 
 <script>
   // 从URL获取JSON数据的函数
