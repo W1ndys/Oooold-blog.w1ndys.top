@@ -10,13 +10,8 @@ date: 2024-02-15 15:50:35
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>比赛日历</title>
 <style>
-  .event-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
   .event-card {
-    width: calc(50% - 8px);
+    width: 100%;
     margin-bottom: 16px;
     padding: 16px;
     box-sizing: border-box;
@@ -29,7 +24,6 @@ date: 2024-02-15 15:50:35
   .data-source {
     margin-top: 20px;
     font-size: 12px;
-    
   }
 </style>
 </head>
@@ -37,7 +31,7 @@ date: 2024-02-15 15:50:35
 
 <h2>比赛日历</h2>
 
-<div class="event-card-container" id="calendarData">
+<div id="calendarData">
 </div>
 
 <div class="data-source">数据来自：探姬、三哈</div>
@@ -56,7 +50,7 @@ date: 2024-02-15 15:50:35
     var calendarData = document.getElementById('calendarData');
     calendarData.innerHTML = ''; // 清除之前的数据
 
-    data.forEach(function(event, index) {
+    data.forEach(function(event) {
       var card = document.createElement('div');
       card.classList.add('event-card');
       card.innerHTML = `
@@ -68,10 +62,6 @@ date: 2024-02-15 15:50:35
         <p><strong>详情:</strong> ${event.readmore}</p>
       `;
       calendarData.appendChild(card);
-      // 每两个卡片之后添加换行
-      if ((index + 1) % 2 === 0) {
-        calendarData.appendChild(document.createElement('br'));
-      }
     });
   }
 
