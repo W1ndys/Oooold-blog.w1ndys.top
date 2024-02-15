@@ -25,24 +25,43 @@ date: 2024-02-15 15:50:35
     margin-top: 20px;
     font-size: 12px;
   }
+  .warning {
+    color: red;
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
+
+<div class="data-source">数据来自：探姬、三哈</div>
+<div class="warning" id="warningMessage" style="display: none;">
+  由于远程数据源获取失败，您现在正在浏览博客本地数据，与实际可能会有延迟<br/>(远程数据源属GitHub托管，或许需要一些魔法)
+</div>
 
 <h2>比赛日历</h2>
 
 <div id="calendarData">
 </div>
 
-<div class="data-source">数据来自：探姬、三哈</div>
-
 <script>
   // 从URL获取JSON数据的函数
   function fetchData(url) {
     return fetch(url)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => data.data.result)
-      .catch(error => console.error('获取数据时发生错误:', error));
+      .catch(error => {
+        console.error('获取远程数据时发生错误:', error);
+        document.getElementById('warningMessage').style.display = 'block';
+        return fetch('/ctf_events/ctf_events.json')
+          .then(response => response.json())
+          .then(data => data.data.result)
+          .catch(error => console.error('获取本地数据时发生错误:', error));
+      });
   }
 
   // 将数据渲染到HTML中的函数
