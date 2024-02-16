@@ -1341,7 +1341,7 @@ inject:
     # - <link rel="stylesheet" href="/css/404.css">
     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
     - <script>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
-    - <link rel="stylesheet" type="text/css" href="/css/huli.css">
+    - <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
 
   # jscss
 
@@ -1349,9 +1349,9 @@ inject:
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/js/foot.js"></script>
-    - <script src="/js/ip.js"></script>
-    - <img id="follow-img" src="/img/kemomimi/huli.gif"/>
-    - <script src="/js/huli.js"></script>
+    - <script src="/js/ip.js"></script> 
+    - <img id="follow-img" src="../img/Capoo/Capoo.gif"/>
+    - <script src="/js/Capoo.js"></script>
     # - <script src="/js/404.js"></script>
 
 # CDN
