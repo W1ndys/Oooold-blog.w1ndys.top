@@ -5,7 +5,7 @@ tags: 手把手教程系列
 categories:
   - 手把手教程
   - ChatGPT
-index_img: /img/ChatGPT/logo.jpg
+index_img: ../img/ChatGPT/logo.jpg
 abbrlink: acc7bbca
 abstract: 输入任意内容回车查看解锁指引
 message: 输入任意内容回车查看解锁指引
@@ -28,9 +28,9 @@ password: chatGPT_1s_g0od
 
 前排提醒，已有成功案例，跟着来就行，教程没任何问题。
 
-![](/img/ChatGPT/PixPin_2023-12-24_15-58-46.png)
+![](../img/ChatGPT/PixPin_2023-12-24_15-58-46.png)
 
-![](/img/ChatGPT/PixPin_2023-12-24_15-59-24.png)
+![](../img/ChatGPT/PixPin_2023-12-24_15-59-24.png)
 
 # 工具准备
 
@@ -77,15 +77,15 @@ password: chatGPT_1s_g0od
 
 输入邮箱密码注册账号，注册完成后登陆
 
-![注册](/img/VPN/注册账号.png)
+![注册](../img/VPN/注册账号.png)
 
 然后点击左侧购买订阅
 
-![订阅](/img/VPN/订阅.png)
+![订阅](../img/VPN/订阅.png)
 
 根据需求选择你合适的方案，如果你只是想尝鲜的话，毫无疑问，选最便宜的，能用就行
 
-![购买订阅](/img/VPN/购买订阅.png)
+![购买订阅](../img/VPN/购买订阅.png)
 
 
 
@@ -93,23 +93,23 @@ password: chatGPT_1s_g0od
 
 买完之后点击左上方仪表盘可以看到你的已订阅
 
-![仪表盘](/img/VPN/仪表盘.png)
+![仪表盘](../img/VPN/仪表盘.png)
 
 然后点击仪表盘下方的使用文档
 
-![客户端安装](/img/VPN/客户端.png)
+![客户端安装](../img/VPN/客户端.png)
 
 选择你的系统安装客户端
 
 安装完之后登陆客户端就可以看到这样
 
-![安装完成](/img/VPN/安装完成.png)
+![安装完成](../img/VPN/安装完成.png)
 
 ### 连接节点
 
 目前为止已经基本结束了，点击连接，点进去选个绿色的节点，点全局，<font color="#FF0000"> 如果后续出现连接失败就换个节点 </font>
 
-![节点](/img/VPN/节点.png)
+![节点](../img/VPN/节点.png)
 
 ## Google /Microsoft 账号的注册
 
@@ -133,19 +133,19 @@ https://w1ndys.top/2023/12/23/Google_account/
 
 点击 login
 
-![image-20231223010822238](/img/ChatGPT/image-1.png)
+![image-20231223010822238](../img/ChatGPT/image-1.png)
 
 点继续使用 Google/Microsoft，看个人喜好，三个理论上都行，有哪个点哪个，这里以 Google 为例（，另外有 Apple 可选 Apple 但后面需不需要别的认证我不知道，买不起果子没试过）
 
-![image-20231223010933294](/img/ChatGPT/image-20231223010933294.png)
+![image-20231223010933294](../img/ChatGPT/image-20231223010933294.png)
 
 然后选择刚注册好的账号登陆之后就可以用了
 
-![image-20231223010959130](/img/ChatGPT/image-20231223010959130.png)
+![image-20231223010959130](../img/ChatGPT/image-20231223010959130.png)
 
 放一张使用截图
 
-![image-20231223011402732](/img/ChatGPT/image-20231223011402732.png)
+![image-20231223011402732](../img/ChatGPT/image-20231223011402732.png)
 
 
 

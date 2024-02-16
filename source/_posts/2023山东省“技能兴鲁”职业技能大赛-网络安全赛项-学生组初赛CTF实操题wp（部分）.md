@@ -23,13 +23,13 @@ BabyRe和TEA两道题不多说了，扔进IDA直接出flag
 
 双写绕过
 
-![](/img/jnxl2023/1.png)
+![](../img/jnxl2023/1.png)
 
 ## 购买FLAG
 
 更改api中的value值，之后金钱足够直接购买即可。
 
-![](/img/jnxl2023/2.png)
+![](../img/jnxl2023/2.png)
 
 # MISC
 
@@ -63,7 +63,7 @@ base64解密一下得到数字
 
 前两个字母没画出来，枚举得到flag
 
-![](/img/jnxl2023/时间不多了wp.jpg)
+![](../img/jnxl2023/时间不多了wp.jpg)
 
 ```
 flag{DATESO}
@@ -73,7 +73,7 @@ flag{DATESO}
 
 扔进winhex直接搜就行
 
-![](/img/jnxl2023/3.png)
+![](../img/jnxl2023/3.png)
 
 # CRYPTO
 

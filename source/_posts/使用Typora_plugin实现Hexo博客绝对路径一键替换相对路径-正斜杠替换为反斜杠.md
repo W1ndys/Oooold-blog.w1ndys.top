@@ -22,23 +22,23 @@ date: 2024-02-08 15:24:23
 
 我把问题抛给大佬，大佬轮子都给我造好了，而且还有礼貌，我说我写个安装文档提供给其他有需要的用户使用，他甚至还麻烦我
 
-![image-20240208160233056](/img/Typora_plugin/ReplaceBackslash/image-20240208160233056.png)
+![image-20240208160233056](../img/Typora_plugin/ReplaceBackslash/image-20240208160233056.png)
 
-![image-20240208160340371](/img/Typora_plugin/ReplaceBackslash/image-20240208160340371.png)
+![image-20240208160340371](../img/Typora_plugin/ReplaceBackslash/image-20240208160340371.png)
 
-![image-20240208160411419](/img/Typora_plugin/ReplaceBackslash/image-20240208160411419.png)
+![image-20240208160411419](../img/Typora_plugin/ReplaceBackslash/image-20240208160411419.png)
 
-![image-20240208164539253](/img/Typora_plugin/ReplaceBackslash/image-20240208164539253.png)
+![image-20240208164539253](../img/Typora_plugin/ReplaceBackslash/image-20240208164539253.png)
 
-![image-20240208172549961](/img/Typora_plugin/ReplaceBackslash/image-20240208172549961.png)
+![image-20240208172549961](../img/Typora_plugin/ReplaceBackslash/image-20240208172549961.png)
 
 ## 脚本适用情况
 
-该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含/img/的路径替换为相对路径，方便 Hexo 博客上传
+该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含../img/的路径替换为相对路径，方便 Hexo 博客上传
 
-例如 Markdown 中文件路径是 `[示例图片](F:/Hexo/source/img/test.png)`
+例如 Markdown 中文件路径是 `[示例图片](F:/Hexo/source../img/test.png)`
 
-替换后的路径就是 `[示例图片](/img/test.png)`
+替换后的路径就是 `[示例图片](../img/test.png)`
 
 本脚本适用于：Hexo 博客写作排版，Hexo 图片放在/source/文件下的 Hexo 博客作者
 
@@ -206,25 +206,25 @@ buttons = [
 
 ### 实现效果
 
-![end](/img/Typora_plugin/ReplaceBackslash/end.gif)
+![end](../img/Typora_plugin/ReplaceBackslash/end.gif)
 
 ## 更新日志
 
-2024 年 2 月 8 日 ， 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
+2024 年 2 月 8 日 ， 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（..../img/）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史
 
 2024 年 2 月 8 日 ，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径
 
 2024 年 2 月 8 日 ，增加了一个实现效果 GIF 演示
 
-2024 年 2 月 8 日 ，受作者启发，将代码中硬编码的 /img/ 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容
+2024 年 2 月 8 日 ，受作者启发，将代码中硬编码的 ../img/ 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容
 
 2024 年 2 月 9 日 ，代码已更新，经过作者的施教，增强了图片路径的匹配，解决了原先替换全文\的问题，现在只替换图片路径，插件作者太强了
 
 如图
 
-![39744b9eade1b1f68271869e78e3a50e](/img/Typora_plugin/ReplaceBackslash/39744b9eade1b1f68271869e78e3a50e.png)
+![39744b9eade1b1f68271869e78e3a50e](../img/Typora_plugin/ReplaceBackslash/39744b9eade1b1f68271869e78e3a50e.png)
 
-![0096befcd128b3bf9346b755fe9e2ccf](/img/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png)
+![0096befcd128b3bf9346b755fe9e2ccf](../img/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png)
 
 2024 年 2 月 10 日，大佬帮忙抓虫，纠正了快捷键的配置
 

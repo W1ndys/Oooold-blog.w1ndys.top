@@ -118,7 +118,7 @@ if rtype_choice:
 
 ```
 
-![image-20240210234408484](/img/dogeCDN/image-20240210234408484.png)
+![image-20240210234408484](../img/dogeCDN/image-20240210234408484.png)
 
 借鉴了大佬的思路以及代码
 

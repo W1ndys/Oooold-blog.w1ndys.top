@@ -8,7 +8,7 @@ categories:
 abbrlink: 8847716f
 ---
 
-![image-20231208221039318](/img/Windows/image-20231208221039318.png)
+![image-20231208221039318](../img/Windows/image-20231208221039318.png)
 
 有时候安装客户端的时候会遇到这种情况
 
@@ -18,7 +18,7 @@ abbrlink: 8847716f
 
 首先右键开始菜单
 
-![image-20231208221525986](/img/Windows/image-20231208221525986.png)
+![image-20231208221525986](../img/Windows/image-20231208221525986.png)
 
 点击<font color='red'>Windows终端（管理员）</font>
 
@@ -26,10 +26,10 @@ abbrlink: 8847716f
 
 然后切换到exe所在的目录
 
-![image-20231208221942022](/img/Windows/image-20231208221942022.png)
+![image-20231208221942022](../img/Windows/image-20231208221942022.png)
 
 然后输入待安装文件名（不要丢掉后缀名）
 
-![image-20231208222008686](/img/Windows/image-20231208222008686.png)
+![image-20231208222008686](../img/Windows/image-20231208222008686.png)
 
 结束！祝你学得开心！

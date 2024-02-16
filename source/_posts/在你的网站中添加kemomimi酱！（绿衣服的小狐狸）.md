@@ -19,7 +19,7 @@ date: 2024-02-11 21:49:37
 
 在你的网站中添加 kemomimi 酱！（绿衣服的小狐狸）
 
-![](/img/kemomimi/asda.png)
+![](../img/kemomimi/asda.png)
 
 效果展示
 
@@ -73,7 +73,7 @@ animate();
 
 保存这个 GIF 图片到你的 source 合适的位置
 
-![](/img/kemomimi/huli.gif)
+![](../img/kemomimi/huli.gif)
 
 ## 引入
 
@@ -83,7 +83,7 @@ animate();
 
 ```
 - <link rel="stylesheet" type="text/css" href="/css/huli.css">
-- <img id="follow-img" src="/img/kemomimi/huli.gif"/>
+- <img id="follow-img" src="../img/kemomimi/huli.gif"/>
 - <link rel="stylesheet" type="text/css" href="/css/huli.css">
 ```
 

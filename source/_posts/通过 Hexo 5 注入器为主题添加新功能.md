@@ -89,7 +89,7 @@ JAVASCRIPT
           name: 'song1',
           artist: 'artist1',
           url: '/songs/song1.mp3',
-          cover: '/img/cover.jpg'
+          cover: '../img/cover.jpg'
         }
       ]
     });
