@@ -51,8 +51,10 @@ date: 2024-02-15 15:50:35
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        return response.json();
+        return response.text(); // 获取文本数据
       })
+      .then(data => atob(data)) // 对数据进行base64解码
+      .then(decodedData => JSON.parse(decodedData)) // 将解码后的数据转换为JSON对象
       .then(data => data.data.result)
       .catch(error => {
         console.error('获取远程数据时发生错误:', error);
@@ -103,7 +105,7 @@ date: 2024-02-15 15:50:35
   }
 
   // JSON数据源的URL
-  var url = 'https://raw.githubusercontent.com/ProbiusOfficial/Hello-CTFtime/main/CN.json';
+  var url = 'https://gitee.com/Probius/Hello-CTFtime/raw/main/CN.b64';
 
   // 获取数据并渲染日历
   fetchData(url).then(renderCalendar);
