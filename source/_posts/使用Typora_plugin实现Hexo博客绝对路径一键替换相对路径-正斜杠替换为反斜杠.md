@@ -136,7 +136,7 @@ module.exports = { plugin: ReplaceBackslash };
 
 1. 修改 `./plugin/global/settings/custom_plugin.user.toml`，添加配置：
 
-```
+```toml
 [ReplaceBackslash]
 name = "替换反斜杠为正斜杠"
 enable = true
@@ -157,7 +157,7 @@ img_folder = "img"          #这里引号内的内容改为你自己的文件夹
 
 在上一步的基础上，继续添加一行代码
 
-```
+```toml
 [ReplaceBackslash.config]
 # 是否忽略html标签<img src="example.jpg">里的资源（markdown是支持插入html的，此选项问是否要忽略img标签）
 ignore_image_div = false
