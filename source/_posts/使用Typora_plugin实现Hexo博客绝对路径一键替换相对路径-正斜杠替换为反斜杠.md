@@ -55,8 +55,8 @@ https://github.com/obgnail/typora_plugin/
 
 ```javascript
 class ReplaceBackslash extends BaseCustomPlugin {
+    hotkey = () => [this.config.hotkey]
     callback = async anchorNode => {
-        hotkey = () => [this.config.hotkey]
         const filepath = this.utils.getFilePath();
         const content = await this.utils.Package.Fs.promises.readFile(filepath, 'utf-8');
         const replacedContent = await this.format(content);
@@ -66,6 +66,7 @@ class ReplaceBackslash extends BaseCustomPlugin {
 
     format = async content => {
         const dir = this.utils.getCurrentDirPath();
+        const imgFolder = this.config.img_folder;
         const regexp = this.config.ignore_image_div
             ? new RegExp("!\\[.*?\\]\\((?<src1>.*)\\)", "g")
             : new RegExp("!\\[.*?\\]\\((?<src1>.*)\\)|<img.*?src=\"(?<src2>.*?)\"", "g");
@@ -73,29 +74,36 @@ class ReplaceBackslash extends BaseCustomPlugin {
         return await this.asyncReplace(content, regexp, async (match, src1, src2) => {
             const src = src1 || src2;
 
-            // 跳过特殊格式的图片（如 base64）和网络图片
+            // 跳过特殊格式的图片（如base64）和网络图片
             if (!src || this.utils.isSpecialImage(src) || this.utils.isNetworkImage(src)) return match;
 
             // 检测图片是否存在于当前电脑中，若不存在，则不处理
             // 如果不希望检测，可以注释掉下面两行
             const realPath = await this.checkImageExist(dir, src);
-            if (!realPath) return match;
+            if (!realPath) {
+                // 如果路径中没有反斜杠，则检查是否位于指定的 img 文件夹中
+                if (!src.includes('\\') && !src.includes('/')) {
+                    const imgPath = this.utils.Package.Path.resolve(dir, imgFolder, src);
+                    if (await this.utils.existPath(imgPath)) {
+                        // 如果图片存在于指定的 img 文件夹中，则返回处理后的路径
+                        return this.replaceBackslash(match, src, imgPath);
+                    }
+                }
+                // 如果路径中无反斜杠并且不在指定的 img 文件夹中，则保持原样
+                return match;
+            }
 
+            // 进行路径替换并处理反斜杠
             return this.replaceBackslash(match, src, realPath);
         });
     }
 
     // 替换路径逻辑
     replaceBackslash = (match, src, realPath) => {
-        const imgFolder = this.config.img_folder;
-        if (src.includes('\\' + imgFolder + '\\')) {
-            const newSrc = '\\' + imgFolder + src.substring(src.indexOf('\\' + imgFolder + '\\') + imgFolder.length + 1);
-            // 将路径中的反斜杠 \ 替换为斜杠 /
-            const replacedSrc = newSrc.replace(/\\/g, '/');
-            const index = match.indexOf(src);
-            return match.slice(0, index) + match.slice(index).replace(src, replacedSrc);
-        }
-        return match;
+        // 将路径中的反斜杠 \ 替换为斜杠 /
+        const replacedSrc = realPath.replace(/\\/g, '/');
+        const index = match.indexOf(src);
+        return match.slice(0, index) + match.slice(index).replace(src, replacedSrc);
     }
 
     asyncReplace = (content, regexp, placement) => {
@@ -130,6 +138,7 @@ class ReplaceBackslash extends BaseCustomPlugin {
 }
 
 module.exports = { plugin: ReplaceBackslash };
+
 ```
 
 ## 启用插件
@@ -226,6 +235,8 @@ buttons = [
 ![0096befcd128b3bf9346b755fe9e2ccf](../img/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png)
 
 2024 年 2 月 10 日，大佬帮忙抓虫，纠正了快捷键的配置
+
+2024 年 2 月 18 日，大佬指出错误，修改了快捷键的错误
 
 ## 鸣谢
 

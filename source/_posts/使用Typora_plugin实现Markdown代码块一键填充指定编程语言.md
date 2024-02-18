@@ -52,35 +52,43 @@ https://github.com/obgnail/typora_plugin/
 在 `./plugin/custom/plugins/` 文件中创建 `MarkdownToCode.js` 文件，把下面代码复制进去。
 
 ```js
-// ./plugin/custom/plugins/MarkdownToCode.js
+// ./plugin/custom/plugins/markdownToCode.js
 
 class MarkdownToCode extends BaseCustomPlugin {
-    callback = async anchorNode => {
-        const filepath = this.utils.getFilePath();
-        const content = await this.utils.Package.Fs.promises.readFile(filepath, 'utf-8');
-        const updatedContent = this.convertMarkdownToCode(content);
-        await this.utils.Package.Fs.promises.writeFile(filepath, updatedContent);
-        File.reloadContent(updatedContent, { fromDiskChange: false });
+    callback = async anchorNode => await this.utils.editCurrentFile(this.convertMarkdownToCode)
+
+    // 主要逻辑代码
+    convertMarkdownToCode = content => {
+        const components = [{ label: "语言", type: "input", value: this.config.code.toLowerCase() }];
+        this.utils.modal({ title: "添加语言", components }, async ([{ submit: targetLang }]) => {
+            if (!targetLang) return;
+
+            const updatedContent = this.updateCodeLanguage(content, targetLang.toLowerCase());
+            const filepath = this.utils.getFilePath();
+            await this.utils.Package.Fs.promises.writeFile(filepath, updatedContent);
+            File.reloadContent(updatedContent, { fromDiskChange: false });
+        })
     }
 
-    // 主要逻辑代码：将未指定语言的代码段指定为指定语言
-    convertMarkdownToCode = content => {
+    // 更新代码块语言
+    updateCodeLanguage = (content, targetLang) => {
         const codeBlockRegex = /```(?:\w+)?\s*([\s\S]+?)\s*```/g; // 匹配代码块，包括语言指定部分
         const updatedContent = content.replace(codeBlockRegex, (match, codeContent) => {
             // 匹配到的完整代码块
             const codeLanguageMatch = match.match(/```(\w+)?/); // 匹配代码块语言指定部分
             const codeLanguage = codeLanguageMatch ? codeLanguageMatch[1] : null; // 获取代码块语言
-            // 如果语言未指定或者不是指定的语言，则添加指定语言标记
-            if (!codeLanguage || codeLanguage.toLowerCase() !== this.config.code.toLowerCase()) {
-                return '```' + this.config.code + '\n' + codeContent + '\n```';
+            // 如果语言未指定或者不是目标语言，则添加目标语言标记
+            if (!codeLanguage || codeLanguage.toLowerCase() !== targetLang) {
+                return '```' + targetLang + '\n' + codeContent + '\n```';
             }
-            return match; // 代码块已经指定为指定语言，不需要修改
+            return match; // 代码块已经指定为目标语言，不需要修改
         });
         return updatedContent;
     }
 }
 
 module.exports = { plugin: MarkdownToCode };
+
 ```
 
 ## 启用插件
@@ -89,8 +97,10 @@ module.exports = { plugin: MarkdownToCode };
 
 ```toml
 [MarkdownToCode]
-name = "标注全部代码块"
-enable = true
+name = "标注全部代码块"  # 右键菜单中展示的名称
+enable = true         # 是否启用此自定义插件
+hide = true           # 是否在右键菜单中隐藏
+order = 1             # 在右键菜单中的出现顺序（越大越排到后面，允许负数）
 
     [MarkdownToCode.config]
     code = "python" ##这里引号内改为你想要格式化的编程语言
