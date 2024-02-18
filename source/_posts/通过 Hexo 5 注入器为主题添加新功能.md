@@ -20,8 +20,6 @@ abbrlink: de3182ad
 
 ```
 hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 'default');
-
-JAVASCRIPT
 ```
 
 上述代码会在生成的页面 `</body>` 注入加载 `jquery.js` 的代码。
@@ -54,8 +52,6 @@ JAVASCRIPT
 hexo.extend.injector.register('body_end', `
   <script src="/js/custom.js"></script>
 `)
-
-JAVASCRIPT
 ```
 
 以下案例都采用类似的形式，不再赘述。
@@ -69,8 +65,9 @@ hexo.extend.injector.register('body_end', `
   <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
   <script defer src="/js/aplayer.js"></script>
 `);
+```
 
-JAVASCRIPT
+```
 !(function() {
   var oldLoadAp = window.onload;
   window.onload = function () {
@@ -89,14 +86,12 @@ JAVASCRIPT
           name: 'song1',
           artist: 'artist1',
           url: '/songs/song1.mp3',
-          cover: '../img/cover.jpg'
+          cover: '/img/cover.jpg'
         }
       ]
     });
   }
 })();
-
-JAVASCRIPT
 ```
 
 更多参数详见 [Aplayer 文档](https://aplayer.js.org/#/zh-Hans/?id=参数)。
@@ -109,8 +104,9 @@ JAVASCRIPT
 hexo.extend.injector.register('body_end', `
   <script defer src="/js/daovoice.js"></script>
 `);
+```
 
-XML
+```
 !(function() {
   var appId = '这里填上注册后账号的 appId';
 
@@ -133,9 +129,9 @@ XML
   });
   daovoice('update');
 })();
-
-JAVASCRIPT
 ```
+
+
 
 ### 文章时效性提示
 
@@ -143,11 +139,9 @@ JAVASCRIPT
 
 代码效果如下所示：
 
-
-
-文章时效性提示
-
-这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。
+> 文章时效性提示
+>
+> 这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。
 
 
 
