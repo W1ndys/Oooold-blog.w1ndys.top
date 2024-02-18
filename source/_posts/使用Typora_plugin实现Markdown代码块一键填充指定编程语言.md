@@ -1,5 +1,5 @@
 ---
-title: 使用Typora_plugin实现Markdownd代码块一键填充指定编程语言
+title: 使用Typora_plugin实现Markdown代码块一键填充指定编程语言
 tags:
   - Typora
   - Hexo
