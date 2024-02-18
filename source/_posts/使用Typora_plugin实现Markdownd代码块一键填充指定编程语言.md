@@ -87,7 +87,7 @@ module.exports = { plugin: MarkdownToCode };
 
 1. 修改 `./plugin/global/settings/custom_plugin.user.toml`，添加配置：
 
-```
+```toml
 [MarkdownToCode]
 name = "标注全部代码块"
 enable = true
