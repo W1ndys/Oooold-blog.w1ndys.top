@@ -3,10 +3,11 @@ title: 使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|�
 tags:
   - Typora
   - Hexo
+  - Typora-plugin
 categories:
   - Hexo
-  - 博客写作
-  - Typora插件开发
+  - blog-post
+  - Typora-plugin
 abbrlink: 520cc65
 date: 2024-02-08 15:24:23
 
@@ -152,9 +153,7 @@ img_folder = "img"          #这里引号内的内容改为你自己的文件夹
 
 ### 添加快捷键
 
-修改
-
-1. 修改 `./plugin/global/settings/custom_plugin.user.toml`，添加配置
+修改 `./plugin/global/settings/custom_plugin.user.toml`，添加配置
 
 在上一步的基础上，继续添加一行代码
 
@@ -173,7 +172,7 @@ hotkey = "ctrl+shift+m"
 
 在上一步的基础上，继续添加代码
 
-```
+```toml
 [quickButton]
 [quickButton.config]
 #   disable:      禁用此按钮
@@ -204,7 +203,7 @@ buttons = [
 
 重启 Typora 就可以在右下角看到添加的快捷按钮
 
-### 实现效果
+## 效果展示
 
 ![end](../img/Typora_plugin/ReplaceBackslash/end.gif)
 
