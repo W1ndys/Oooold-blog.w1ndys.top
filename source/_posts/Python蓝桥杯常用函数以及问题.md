@@ -83,7 +83,7 @@ print(list4)
 例如：
 
 ```Python
-a = input()  # 
+a = input()  # 接受一个值
 a, b = input().split()  # 接受两个值，空格输入，回车执行
 c = input().split()  # 输入为列表
 ```
@@ -91,6 +91,33 @@ c = input().split()  # 输入为列表
 - 举例合集
 
 ```Python
-aaa=1
+m = int(input())  # 输入一个数字
+
+m, n = map(int, input().split())  # 输入两个数字
+
+a, b = map(int, input().split("#"))  # 连续输入，井号间隔
+
+str1 = list(map(int, input().split()))  # 一行输入无限多的整型数据，用list存储
+
+data3 = [int(input()) for _ in range(10)]  # 多行input输入，存放在一个列表中
+
+data4 = [
+    list(map(int, input().split())) for i in range(2)
+]  # 相同的思想生成列表，存储为列表的列表
+
+data5 = [tuple(map(int, input().split())) for i in range(2)]
+# 列表推导式
+
+for i in range(5):
+    x = input()
+    # 连续输入
+    
+arr = input().split()  # 这里存储的是字符串型的列表
+arr = list(map(int, input().split()))  # 这里存储的是整型的列表
+
 ```
+
+- 记录一下没见过的[`tuple`](/posts/249dac9b)函数的语法解释（元组）
+
+- 记录一下[`map`](/posts/6bbcb18e)函数的语法解释（迭代器）
 
