@@ -35,7 +35,7 @@ date: 2024-02-15 15:50:35
 
 <div class="data-source">数据来自：探姬、三哈</div>
 <div class="warning" id="warningMessage" style="display: none;">
-  由于远程数据源获取失败，您现在正在浏览博客本地数据，与实际可能会有延迟<br/>(远程数据源属GitHub托管，或许需要一些魔法)
+  由于远程数据源获取失败，您现在正在浏览本地数据，与实际可能会有延迟
 </div>
 
 <h2>比赛日历</h2>
@@ -46,24 +46,28 @@ date: 2024-02-15 15:50:35
 <script>
   // 从URL获取JSON数据的函数
   function fetchData(url) {
-    return fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text(); // 获取文本数据
-      })
-      .then(data => atob(data)) // 对数据进行base64解码
-      .then(decodedData => JSON.parse(decodedData)) // 将解码后的数据转换为JSON对象
-      .then(data => data.data.result)
-      .catch(error => {
-        console.error('获取远程数据时发生错误:', error);
-        document.getElementById('warningMessage').style.display = 'block';
-        return fetch('/ctf_events/ctf_events.json')
-          .then(response => response.json())
-          .then(data => data.data.result)
-          .catch(error => console.error('获取本地数据时发生错误:', error));
-      });
+    return fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer your-access-token',
+        'Custom-Header': 'Some value'
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => data.data.result)
+    .catch(error => {
+      console.error('获取远程数据时发生错误:', error);
+      document.getElementById('warningMessage').style.display = 'block';
+      return fetch('/ctf_events/ctf_events.json')
+        .then(response => response.json())
+        .then(data => data.data.result)
+        .catch(error => console.error('获取本地数据时发生错误:', error));
+    });
   }
 
   // 将数据渲染到HTML中的函数
@@ -105,7 +109,7 @@ date: 2024-02-15 15:50:35
   }
 
   // JSON数据源的URL
-  var url = 'https://gitee.com/Probius/Hello-CTFtime/raw/main/CN.b64';
+  var url = 'https://raw.githubusercontent.com/ProbiusOfficial/Hello-CTFtime/main/CN.json#/';
 
   // 获取数据并渲染日历
   fetchData(url).then(renderCalendar);
