@@ -96,7 +96,7 @@ avatar:
 ###########################################################################################################################################
 # Disable all banner image
 # 如果不要显示顶部图，可直接配置 disable_top_img: true
-disable_top_img: false
+disable_top_img: true
 
 # The banner image of home page
 # 主页的 top_img
@@ -816,7 +816,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: true #是否开启本地搜索
+  enable: false #是否开启本地搜索
   # 预加载，开启后，进入网页后会自动加载搜索文件。关闭时，只有点击搜索按钮后，才会加载搜索文件
   preload: true
   # 匹配的文章结果，默认显示最开始的 1段结果
