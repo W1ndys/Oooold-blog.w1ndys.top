@@ -127,6 +127,8 @@ print("%.2f" % (float(a)))  # %.2f直接4舍5入
 
 ### 占位符
 
+#### %占位符详解
+
 占位符主要用于填充格式问题，通过加入格式化字符串来控制输出的格式。在Python中，常见的占位符及其使用方式如下：
 
 - `%s`: 字符串的占位符，可以使用 `%s` 或者 `{}` 进行替换。例如：`'{:s}'.format('hello')`。
@@ -149,3 +151,60 @@ print('The value is {:.2f}'.format(3.14159))  # 输出：The value is 3.14
 - `{:0>5}`: 控制填充格式，在数字前填充指定字符，总长度为5。例如：`'{:0>5}'.format('33')` 输出 `'00033'`。
 
 总的来说，`format()` 方法可以将数值按照指定的格式进行格式化输出，其中格式化的方式由参数决定，常见的参数包括 `b`（二进制）、`x`（十六进制）、`o`（八进制）等。
+
+#### 关于format函数
+
+`format()` 方法可以完全代替 `%` 格式化。实际上，Python 官方已经推荐使用 `format()` 方法进行字符串格式化，因为它提供了更多的功能和选项，并且更加灵活。`format()` 方法可以在格式化字符串中指定参数的顺序、精度、对齐方式等，而 `%` 格式化相对来说功能较为简单。
+
+另外，从 Python 3.6 版本开始，引入了 f-string，它提供了一种更加简洁、直观的字符串格式化语法，更推荐在新的 Python 项目中使用。但是，即使使用 f-string，`format()` 方法仍然是一个非常有用的备选方法，特别是对于需要动态生成格式的情况。
+
+当使用 `format()` 方法时，可以按照需要定义格式，并在字符串中插入对应的值。下面是一些示例：
+
+1. **基本用法**：
+```python
+name = "Alice"
+age = 30
+print("My name is {}, and I am {} years old.".format(name, age))
+# 输出: My name is Alice, and I am 30 years old.
+```
+
+2. **指定参数顺序**：
+```python
+print("{1} is {0} years old.".format(age, name))
+# 输出: Alice is 30 years old.
+```
+
+3. **指定精度**：
+```python
+pi = 3.14159265359
+print("The value of pi is {:.2f}".format(pi))
+# 输出: The value of pi is 3.14
+```
+
+4. **对齐方式**：
+```python
+word = "hello"
+print("'{:>10}'".format(word))  # 右对齐
+print("'{:<10}'".format(word))  # 左对齐
+print("'{:^10}'".format(word))  # 居中对齐
+# 输出: '     hello'
+# 输出: 'hello     '
+# 输出: '  hello   '
+```
+
+5. **使用命名参数**：
+```python
+print("My name is {name}, and I am {age} years old.".format(name="Bob", age=25))
+# 输出: My name is Bob, and I am 25 years old.
+```
+
+6. **格式化数字**：
+```python
+num = 12345
+print("The number is {:,}".format(num))  # 千位分隔符
+print("The number is {:b}".format(num))  # 二进制
+# 输出: The number is 12,345
+# 输出: The number is 11000000111001
+```
+
+这些示例展示了 `format()` 方法的灵活性，可以根据需要进行格式化，并支持多种不同的格式选项。
