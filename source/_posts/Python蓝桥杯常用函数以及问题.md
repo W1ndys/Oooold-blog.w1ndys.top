@@ -250,3 +250,54 @@ print("The number is {:b}".format(num))  # 二进制
    ```
 
 ### str 类型的内建函数
+
+1. **大小写转换**：
+   - `S.lower()`: 将字符串 S 中的所有字符转换为小写。
+   - `S.upper()`: 将字符串 S 中的所有字符转换为大写。
+   - `S.swapcase()`: 将字符串 S 中的大小写互换。
+   - `S.capitalize()`: 将字符串 S 中的首字母转换为大写，其他字母转换为小写。
+   - `s.title()`: 将字符串 s 中每个单词的首字母转换为大写。
+
+   ```python
+   s = "hello world"
+   print(s.lower())  # 输出: hello world
+   print(s.upper())  # 输出: HELLO WORLD
+   print(s.swapcase())  # 输出: HELLO WORLD
+   print(s.capitalize())  # 输出: Hello world
+   print(s.title())  # 输出: Hello World
+   ```
+
+2. **查找和替换**：
+   - `S.find(sub, start, end)`: 返回字符串 S 中子字符串 sub 第一次出现的索引，可指定搜索范围。
+   - `S.rfind(sub, start, end)`: 返回字符串 S 中子字符串 sub 最后一次出现的索引。
+   - `S.count(sub, start, end)`: 返回字符串 S 中子字符串 sub 出现的次数。
+   - `S.replace(old, new, count)`: 将字符串 S 中的 old 子字符串替换为 new，可以指定替换次数。
+
+   ```python
+   s = "I love Python. Python is great."
+   print(s.find("Python"))  # 输出: 2
+   print(s.rfind("Python"))  # 输出: 14
+   print(s.count("Python"))  # 输出: 2
+   print(s.replace("Python", "Java"))  # 输出: I love Java. Java is great.
+   ```
+
+3. **去除空白字符**：
+   - `S.strip(chars)`: 移除字符串 S 中指定的字符，默认移除空格。
+
+   ```python
+   s = "  hello  "
+   print(s.strip())  # 输出: hello
+   ```
+
+4. **分割和连接**：
+   - `S.split(sep, maxsplit)`: 使用分隔符 sep 将字符串 S 分割成一个列表，maxsplit 指定分割次数。
+   - `S.join(iterable)`: 将可迭代对象中的字符串连接起来，以字符串 S 作为连接符。
+
+   ```python
+   s = "hello-world"
+   print(s.split("-"))  # 输出: ['hello', 'world']
+   
+   a = '-'
+   b = ['hello', 'world']
+   print(a.join(b))  # 输出: hello-world
+   ```
