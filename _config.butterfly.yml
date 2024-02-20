@@ -1265,7 +1265,7 @@ fancybox: false
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
     # - xxxx
@@ -1339,20 +1339,20 @@ inject:
     - <link rel="stylesheet" href="/css/card-info-btn.css">
     # - <meta name="referrer" content="never">
     # - <link rel="stylesheet" href="/css/404.css">
-    - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    - <script>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+    - <script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    - <script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
     - <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
 
   # jscss
 
   # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
-    - <script src="/js/foot.js"></script>
-    - <script src="/js/ip.js"></script> 
+    # - <script data-pjax src="xxxx"></script>
+    - <script data-pjax src="/js/foot.js"></script>
+    - <script data-pjax src="/js/ip.js"></script> 
     - <img id="follow-img" src="../img/Capoo/Capoo.gif"/>
-    - <script src="/js/Capoo.js"></script>
-    # - <script src="/js/404.js"></script>
+    - <script data-pjax src="/js/Capoo.js"></script>
+    # - <script data-pjax src="/js/404.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
