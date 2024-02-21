@@ -19,7 +19,7 @@ bottom:
     name: 51la统计信息
     icon: fa fa-rss-square
     order: 8
-    html: '<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYFt9znqKItrHZ/quote.js?theme=#4C4948,#4C4948,#4C4948,#4C4948,#FFFFFF,#176CE4,13&col=true&f=12"></script>'
+    html: '<script data-pjax id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYFt9znqKItrHZ/quote.js?theme=#4C4948,#4C4948,#4C4948,#4C4948,#FFFFFF,#176CE4,13&col=true&f=12"></script>'
   - class_name: "widget"
     id_name: ad
     name: 广告位招租
