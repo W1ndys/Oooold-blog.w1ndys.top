@@ -26,7 +26,6 @@ menu:
   #   照片: /Gallery/ || fas fa-images
   #   电影: /movies/ || fas fa-video
   友链: /link/ || fas fa-link
-  CTF赛事日历: /ctf_events/ || fa fa-gamepad
   项目||fa fa-pencil||hide:
     选课指北: /posts/216d9006#/ || fa fa-arrow-up
     速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
