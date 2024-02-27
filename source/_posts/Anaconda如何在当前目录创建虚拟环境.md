@@ -1,7 +1,14 @@
 ---
-title: 'Anaconda如何在当前目录创建虚拟环境'
-tags: [Python,Anaconda,env]
-categories: [Python,Anaconda,env]
+title: Anaconda如何在当前目录创建虚拟环境
+tags:
+  - Python
+  - Anaconda
+  - env
+categories:
+  - Python
+  - Anaconda
+  - env
+abbrlink: c85e665e
 date: 2024-02-25 00:00:50
 ---
 
